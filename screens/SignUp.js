@@ -31,6 +31,7 @@ const SignUp = ({navigation}) => {
         first_name: firstName,
         last_name: lastName,
         email: userName,
+        phone: phone,
         password: password,
       });
     },
@@ -132,7 +133,7 @@ const SignUp = ({navigation}) => {
               spellCheck={false}
               autoComplete="off"
               onChangeText={text => {
-                setUserName(text);
+                setLastName(text);
                 if (!isValid && text.length > 0) {
                   setIsValid(true);
                 }
@@ -168,7 +169,7 @@ const SignUp = ({navigation}) => {
               autoComplete="off"
               spellCheck={false}
               onChangeText={text => {
-                setLastName(text);
+                setUserName(text);
                 if (!isValid && text.length > 0) {
                   setIsValid(true);
                 }
@@ -253,17 +254,19 @@ const SignUp = ({navigation}) => {
               autoCorrect={false}
               autoComplete="off"
               spellCheck={false}
-              maxLength={12}
+              maxLength={15}
               onChangeText={text => {
-                if (text.length === 3 && phone.length === 2) {
-                  setPhone(text + '-');
-                } else {
-                  if (text.length === 8 && phone.length === 7) {
-                    setPhone(text + '-');
-                  } else {
-                    setPhone(text);
-                  }
-                }
+                // if (text.length === 3 && phone.length === 2) {
+                //   setPhone(text + '-');
+                // } else {
+                //   if (text.length === 8 && phone.length === 7) {
+                //     setPhone(text + '-');
+                //   } else {
+                //     setPhone(text);
+                //   }
+                // }
+                setPhone(text);
+
                 if (!isValid && text.length > 0) {
                   setIsValid(true);
                 }
